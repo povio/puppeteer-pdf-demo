@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import puppeteer from "puppeteer";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -15,6 +17,8 @@ export async function POST(request: NextRequest) {
 
     const browser = await puppeteer.launch({
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      executablePath:
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
     });
 
     const page = await browser.newPage();
