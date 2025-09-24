@@ -1,0 +1,94 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .footer-container {
+    width: 100%;
+    background: #f8f9fa;
+    padding: 15px 40px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-height: 60px;
+  }
+
+  .page-footer {
+    justify-content: center;
+  }
+
+  .consultant-info {
+    text-align: right;
+  }
+
+  .consultant-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .consultant-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+  }
+
+  .consultant-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: #333;
+  }
+
+  .consultant-phone,
+  .consultant-email {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .consultant-email {
+    color: #7fb3a0;
+    text-decoration: none;
+  }
+
+  .page-number {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+  }
+
+  /* Print Styles */
+  @media print {
+    .footer-container {
+      background: #f8f9fa !important;
+      -webkit-print-color-adjust: exact;
+      color-adjust: exact;
+    }
+  }
+</style>
+
+
+<body>
+  <div class="footer-container">
+    <div class="consultant-info">
+      <p class="consultant-title">Recruiter:</p>
+      <div class="consultant-details">
+        <p class="consultant-name">altin.hysa@povio.com</p>
+        <p class="consultant-phone">1234124</p>
+        <p class="consultant-email">altin.hysa@povio.com</p>
+      </div>
+    </div>
+    <div class="page-number">
+      <span class="pageNumber"></span>
+    </div>
+  </div>
+</body>

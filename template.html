@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional CV Template</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    tr,
+    .avoid-break {
+      page-break-inside: avoid;
+    }
+
+    .cv-container {
+      max-width: 850px;
+      margin: 0 auto 40px auto;
+      background: white;
+      overflow: hidden;
+      page-break-after: page;
+    }
+
+    .cv-container:first-child {
+      page-break-after: always;
+    }
+
+    .cv-container:last-child {
+      margin-bottom: 0;
+    }
+
+    .cv-container+.cv-container {
+      page-break-before: always;
+    }
+
+    .cv-header {
+      background: linear-gradient(135deg, #7fb3a0 0%, #6ba389 100%);
+      color: white;
+      padding: 30px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .company-address {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .company-address p {
+      margin: 2px 0;
+    }
+
+    .company-logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-icon {
+      position: relative;
+      width: 50px;
+      height: 40px;
+    }
+
+    .company-logo-img {
+      max-height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    .we-are {
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+    }
+
+    .renewables {
+      font-size: 24px;
+      font-weight: 700;
+      color: #333;
+      line-height: 1;
+    }
+
+    .page-title h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+      margin: 0;
+    }
+
+    .cv-title {
+      text-align: center;
+      padding: 30px 0;
+      background: white;
+    }
+
+    .cv-title h1 {
+      font-size: 24px;
+      font-weight: 500;
+      color: #333;
+      letter-spacing: -0.5px;
+    }
+
+    .cv-content {
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+
+    .info-table tr {
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .info-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .info-table td {
+      padding: 8px 20px;
+      vertical-align: top;
+    }
+
+    .label {
+      font-weight: 600;
+      color: #555;
+      width: 200px;
+      background-color: #f8f9fa;
+      font-size: 14px;
+      border-right: 1px solid #e0e0e0;
+    }
+
+    .value {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .value p {
+      margin-bottom: 15px;
+    }
+
+    .value p:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-section {
+      margin-top: 20px;
+    }
+
+    .skills-section ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 10px;
+    }
+
+    .skills-section li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 5px;
+    }
+
+    .skills-section li:before {
+      content: "•";
+      color: #7fb3a0;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    /* CV Section Styles */
+    .cv-section {
+      margin-bottom: 35px;
+    }
+
+    .cv-section:last-child {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #7fb3a0;
+    }
+
+    .section-content {
+      margin-left: 0;
+    }
+
+    /* Personal Information Styles */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: #555;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .info-value {
+      font-size: 14px;
+      color: #333;
+    }
+
+    /* Experience Styles */
+    .experience-item {
+      margin-bottom: 30px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .experience-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .job-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+    }
+
+    .job-period {
+      font-size: 13px;
+      color: #7fb3a0;
+      font-weight: 500;
+      background: #f0f8f5;
+      padding: 4px 10px;
+      border-radius: 15px;
+    }
+
+    .company-name {
+      font-size: 14px;
+      color: #666;
+      margin: 0 0 12px 0;
+      font-style: italic;
+    }
+
+    .job-responsibilities {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .job-responsibilities li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .job-responsibilities li:before {
+      content: "▸";
+      color: #7fb3a0;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    /* Education Styles */
+    .education-item {
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .education-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .education-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .degree-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+    }
+
+    .education-period {
+      font-size: 13px;
+      color: #7fb3a0;
+      font-weight: 500;
+    }
+
+    .institution-name {
+      font-size: 14px;
+      color: #666;
+      margin: 0 0 6px 0;
+      font-weight: 500;
+    }
+
+    .education-details,
+    .education-grade {
+      font-size: 13px;
+      color: #555;
+      margin: 3px 0;
+    }
+
+    /* Skills Styles */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-category {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #7fb3a0;
+    }
+
+    .skill-category-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 15px 0;
+    }
+
+    .skill-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .skill-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .skill-list li:before {
+      content: "•";
+      color: #7fb3a0;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    /* Languages Styles */
+    .language-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .language-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      background: #f8f9fa;
+      border-radius: 6px;
+      border-left: 3px solid #7fb3a0;
+    }
+
+    .language-name {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .language-level {
+      font-size: 13px;
+      color: #7fb3a0;
+      font-weight: 500;
+    }
+
+    /* Certifications Styles */
+    .certification-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .certification-list li {
+      position: relative;
+      padding: 12px 0 12px 25px;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .certification-list li:before {
+      content: "✓";
+      color: #7fb3a0;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      top: 12px;
+    }
+
+    .certification-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* Additional Information Styles */
+    .additional-info p {
+      margin-bottom: 12px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .additional-info p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* References Styles */
+    .references-note {
+      font-size: 14px;
+      color: #666;
+      font-style: italic;
+      text-align: center;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 6px;
+      margin: 0;
+    }
+
+    /* Footer Styles */
+    .cv-footer {
+      background: #f8f9fa;
+      padding: 15px 40px;
+      border-top: 1px solid #e0e0e0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .page-footer {
+      justify-content: center;
+    }
+
+    .consultant-info {
+      text-align: right;
+    }
+
+    .consultant-title {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .consultant-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+
+    .consultant-name {
+      font-weight: 600;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .consultant-phone,
+    .consultant-email {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .consultant-email {
+      color: #7fb3a0;
+      text-decoration: none;
+    }
+
+    .page-number {
+      font-size: 12px;
+      color: #666;
+      font-weight: 500;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      .cv-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 25px 20px;
+      }
+
+      .company-logo {
+        order: -1;
+      }
+
+      .cv-content {
+        padding: 0 20px 30px;
+      }
+
+      .cv-footer {
+        padding: 25px 20px;
+      }
+
+      .info-table td {
+        padding: 15px;
+      }
+
+      .label {
+        width: 150px;
+        font-size: 13px;
+      }
+
+      .value {
+        font-size: 13px;
+      }
+
+      .consultant-info {
+        text-align: center;
+      }
+
+      .consultant-details {
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .info-table,
+      .info-table tbody,
+      .info-table tr,
+      .info-table td {
+        display: block;
+      }
+
+      .info-table tr {
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .label {
+        width: 100%;
+        background: #7fb3a0;
+        color: white;
+        font-weight: 600;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .value {
+        background: white;
+      }
+
+      .company-name {
+        align-items: center;
+      }
+
+      .we-are,
+      .renewables {
+        font-size: 20px;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .cv-container {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: none;
+        margin-bottom: 0;
+        page-break-inside: avoid;
+      }
+
+      .cv-container:last-child {
+        page-break-after: auto;
+      }
+
+      .cv-header {
+        background: #7fb3a0 !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+      }
+
+      .cv-footer {
+        background: #f8f9fa !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+      }
+
+      .skill-category {
+        background: #f8f9fa !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+      }
+
+      .language-item {
+        background: #f8f9fa !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+      }
+
+      .references-note {
+        background: #f8f9fa !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Page 1: CV Summary -->
+  <div class="cv-container">
+    <header class="cv-header">
+      <div class="company-info">
+      </div>
+      <div class="company-logo">
+        <img class="company-logo-img"
+          src="https://match-me-ai-dev.povio.dev/api/v1/teams/111f7aee-ef74-437f-9466-a1aef2271c18/logo"
+          alt="Company Logo" />
+      </div>
+    </header>
+
+    <div class="cv-content">
+      <table class="info-table">
+        <tr>
+          <td class="label">Candidate Name</td>
+          <td class="value">Warren Davis</td>
+        </tr>
+        <tr>
+          <td class="label">Position Applying</td>
+          <td class="value">Mission Equipment Engineer</td>
+        </tr>
+        <tr>
+          <td class="label">Residence</td>
+          <td class="value">Brussels, Belgium</td>
+        </tr>
+        <tr>
+          <td class="label">Notice Period</td>
+          <td class="value">Immediate</td>
+        </tr>
+        <tr>
+          <td class="label">Summary<br>Motivation for this role</td>
+          <td class="value">
+            <p>Warren Davis is a highly accomplished professional with over 15 years of dedicated experience in the
+              offshore industry, including 7 years as an Offshore Team Lead and Valve Engineer. He brings extensive
+              expertise in the maintenance, repair, and certification of critical mission equipment, aligning perfectly
+              with the demands of the Mission Equipment Engineer role. He has a proven track record in full lifecycle
+              management of valves on FPSOs and TLPs, developing annual maintenance plans, and leading technical teams.
+              Proficient in systems like SAP for work order management and adept at creating detailed equipment
+              databases, he significantly contributed to cost-saving initiatives through refurbishment programs (30%
+              annual reduction in new valve purchases). Warren is committed to rigorous QHSE-S standards, implementing
+              procedures like Permit to Work and Lock Out Tag Out. As an ASME Certified Inspector specializing in
+              Pressure Relief Devices, he possesses in-depth knowledge of critical equipment inspection and is dedicated
+              to continuous team development and fault analysis. He is eager to apply his hands-on leadership and
+              technical skills to the dynamic offshore wind industry.</p>
+            <div class="skills-section">
+              <p><strong>Key Skills:</strong></p>
+              <ul>
+                <li>Valve Engineering & Maintenance</li>
+                <li>Offshore Team Leadership</li>
+                <li>QHSE-S & Safety Procedures (PTW, LOTO, SJA)</li>
+                <li>SAP Work Order Management</li>
+                <li>ASME Pressure Relief Devices Inspection</li>
+                <li>Equipment Tracking & Refurbishment</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Qualification/Certificates</td>
+          <td class="value">ASME Certified Inspector (Pressure Relief Devices)</td>
+        </tr>
+        <tr>
+          <td class="label">Interview Availability</td>
+          <td class="value">Upon request</td>
+        </tr>
+      </table>
+    </div>
+
+    <footer class="cv-footer">
+      <div class="consultant-info">
+        <p class="consultant-title">Recruiter:</p>
+        <div class="consultant-details">
+          <p class="consultant-name">altin.hysa@povio.com</p>
+          <p class="consultant-phone">1234124</p>
+          <p class="consultant-email">altin.hysa@povio.com</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Page 2: Detailed CV -->
+  <div class="cv-container">
+    <div class="cv-content">
+      <section class="cv-section">
+        <h3 class="section-title">Personal Information</h3>
+        <div class="section-content">
+          <div class="info-grid">
+            <div class="info-item avoid-break"><span class="info-label">Full Name:</span> <span
+                class="info-value">Warren Davis</span></div>
+            <div class="info-item avoid-break"><span class="info-label">Nationality:</span> <span
+                class="info-value">South African</span></div>
+            <div class="info-item avoid-break"><span class="info-label">Location:</span> <span
+                class="info-value">Brussels, Belgium</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cv-section">
+        <h3 class="section-title">Professional Experience</h3>
+        <div class="section-content">
+          <div class="experience-item">
+            <div class="experience-header avoid-break">
+              <h4 class="job-title">Offshore Team Lead & Valve Engineer</h4>
+              <span class="job-period">2016 - 2023</span>
+            </div>
+            <p class="company-name">ExxonMobil</p>
+            <ul class="job-responsibilities">
+              <li class="avoid-break">Managed the full lifecycle of valves on FPSOs and TLPs, serving as the key liaison
+                between onshore integrity teams and offshore operations.</li>
+              <li class="avoid-break">Developed and executed annual maintenance plans, ensuring operational fitness and
+                compliance.</li>
+              <li class="avoid-break">Led a team of technicians, overseeing their performance, competency development,
+                and fault analysis.</li>
+              <li class="avoid-break">Proficiently utilized systems like SAP for work order management, equipment
+                tracking, and maintenance history.</li>
+              <li class="avoid-break">Implemented cost-saving initiatives, including valve refurbishment, resulting in a
+                30% annual reduction in new valve purchases.</li>
+              <li class="avoid-break">Maintained a clear overview of equipment inventory and supported vessel/project
+                preparation.</li>
+              <li class="avoid-break">Ensured rigorous adherence to QHSE-S standards, implementing Permit to Work, Lock
+                Out Tag Out procedures, and Safe Job Analyses.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Page 3: Skills & Additional Info -->
+  <div class="cv-container">
+    <div class="cv-content">
+      <section class="cv-section">
+        <h3 class="section-title">Technical Skills</h3>
+        <div class="section-content">
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h4 class="skill-category-title">Technical & Operational</h4>
+              <ul class="skill-list">
+                <li class="avoid-break">Valve Engineering</li>
+                <li class="avoid-break">Mission Equipment Maintenance & Repair</li>
+                <li class="avoid-break">Equipment Certification</li>
+                <li class="avoid-break">FPSO & TLP Operations</li>
+                <li class="avoid-break">Maintenance Planning & Optimization</li>
+                <li class="avoid-break">SAP (Work Order Management)</li>
+                <li class="avoid-break">Database Creation (Equipment Tracking, Maintenance History)</li>
+                <li class="avoid-break">Cost-Saving Initiatives (Refurbishment)</li>
+                <li class="avoid-break">QHSE-S Standards Adherence</li>
+                <li class="avoid-break">Permit to Work (PTW)</li>
+                <li class="avoid-break">Lock Out Tag Out (LOTO)</li>
+                <li class="avoid-break">Safe Job Analyses (SJA)</li>
+                <li class="avoid-break">Pressure Relief Devices Inspection</li>
+                <li class="avoid-break">Fault Analysis</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4 class="skill-category-title">Leadership & Management</h4>
+              <ul class="skill-list">
+                <li class="avoid-break">Offshore Team Leadership (7 years)</li>
+                <li class="avoid-break">Team Development & Mentoring</li>
+                <li class="avoid-break">Liaison between Onshore/Offshore Teams</li>
+                <li class="avoid-break">Coordination of Third-Party Specialists</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cv-section">
+        <h3 class="section-title">Certifications & Training</h3>
+        <div class="section-content">
+          <ul class="certification-list">
+            <li class="avoid-break">ASME Certified Inspector (Pressure Relief Devices)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cv-section">
+        <h3 class="section-title">Additional Information</h3>
+        <div class="section-content">
+          <p><strong>Availability:</strong> Immediate</p>
+          <p><strong>Travel:</strong> Willing to travel</p>
+          <p><strong>Relocation:</strong> Willing to relocate to Vlissingen, Netherlands</p>
+          <p><strong>Work Authorization:</strong> South African national; requires employment letter/sponsorship</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+
+</html>
